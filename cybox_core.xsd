@@ -131,6 +131,11 @@
 				<xs:documentation>The sighting_count field specifies how many different identical instances of the Observable may have been seen/sighted.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
+		<xs:attribute name="impact_score" type="xs:positiveInteger" default="1">
+			<xs:annotation>
+				<xs:documentation>The impact score specifies the value of the Observable in relation to other Observables</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 	<!---->
 	<xs:simpleType name="TrendEnum">

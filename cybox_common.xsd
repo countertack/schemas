@@ -34,6 +34,36 @@
 					<xs:documentation>The Description field is optional and enables a generalized but structured description of this syber observation source.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="Author" type="cyboxCommon:StructuredTextType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The Author field is optional and enables specification of a cybox author.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Email" type="cyboxCommon:StructuredTextType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The Email field is optional and enables specification of a cybox author's Email.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Revision" type="cyboxCommon:StructuredTextType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The Revision field is optional and enables specification of a cybox files revision.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Creation" type="cyboxCommon:StructuredTextType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The Creation field is optional and enables specification of a cybox files creation data.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Taxonomies" type="cyboxCommon:TaxonomyListType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Need a Taxonomy description here.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Hashes" type="cyboxCommon:HashListType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The Hashes field specifies any hashes of the file.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="Contributors" type="cyboxCommon:PersonnelType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The Contributors field is optional and enables description of the individual contributors involved in this cyber observation source.</xs:documentation>
@@ -1881,6 +1911,38 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TaxonomyListType">
+		<xs:annotation>
+			<xs:documentation>The TaxonomyListType type is used for representing a list of taxonomy values.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Taxonomy" type="cyboxCommon:TaxonomyType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>The Taxonomy field specifies a single taxonomy value.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TaxonomyType">
+		<xs:annotation>
+			<xs:documentation>The TaxonomyValueType is used for specifying the resulting value from a taxonomy.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="TaxonomyValueType" type="cyboxCommon:StructuredTextType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The Taxonomy_Value field specifies a single result value of a taxonomy</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TaxonomyValueType">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="cyboxCommon:StructuredTextType"/>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="HashListType">
 		<xs:annotation>
